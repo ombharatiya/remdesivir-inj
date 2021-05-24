@@ -10,6 +10,7 @@ function App() {
         <p>
           be kind, calm mind
         </p>
+        <p>Cases are going high</p>
         <a
           className="App-link"
           href="https://reactjs.org"

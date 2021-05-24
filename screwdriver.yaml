@@ -6,14 +6,14 @@ jobs:
         image: node:12
         steps:
             - echo: echo
-    build-node8:
-        image: node:8
+    build-node12:
+        image: node:12
         steps: 
             - init: npm install
             - test: npm test
             - publish: |
                 echo "publishing against node 8"
-                meta set publish.node8 `date +%s`
+                meta set publish.node12 `date +%s`
                 sleep 1
         requires: [main]
         
@@ -32,14 +32,14 @@ jobs:
         image: node:10
         steps:
             - verify: echo verify
-            - deploy-8: echo "deploying node8 $(meta get publish.node8)"
+            - deploy-8: echo "deploying node12 $(meta get publish.node12)"
             - deploy-10: echo "deploying node10 $(meta get publish.node10)"
-        requires: [build-node10, build-node8, sd@12:main-2]
+        requires: [build-node10, build-node12, sd@12:main-2]
     delploy-prod:  
         image: node:10
         steps:
             - verify: echo verify
-            - deploy-8: echo "deploying node8 $(meta get publish.node8)"
+            - deploy-8: echo "deploying node12 $(meta get publish.node12)"
             - deploy-10: echo "deploying node10 $(meta get publish.node10)"
         requires: [delploy-stage]
     rollback-prod:
@@ -47,6 +47,6 @@ jobs:
         requires: [~sd@12:main]
         steps:
             - rollback-8: |
-                echo "rolling back to version $(meta get publish.node8)"
+                echo "rolling back to version $(meta get publish.node12)"
             - rollback-10: |
                 echo "rolling back to version $(meta get publish.node10)"

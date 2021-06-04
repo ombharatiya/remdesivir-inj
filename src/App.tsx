@@ -10,7 +10,8 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <CryptoDemo/>
         <p>
-          be kind, calm mind. okbye
+          be kind, calm mind.
+          This is a nice Site with an atom sign. okbye!
         </p>
         <p>Cases are going high</p>
         <a

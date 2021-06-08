@@ -1,6 +1,6 @@
 annotations:
     screwdriver.cd/chainPR: true
-    # screwdriver.cd/restrictPR: all
+    screwdriver.cd/restrictPR: all
 jobs: 
     main:
         requires: [~commit, ~pr]

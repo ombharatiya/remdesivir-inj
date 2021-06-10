@@ -10,8 +10,8 @@ jobs:
             - check: echo pass
             - echo: echo
             - status: |
-                meta set meta.status.findbugs '{"status":"FAILURE","message":"923 issues found. Previous count: 914 issues.","url":"http://findbugs.com"}'
                 meta set meta.status.coverage '{"status":"PENDING","message":"Coverage is above 80%."}'
+                meta set meta.status.findbugs '{"status":"PENDING","message":"Coverage is below 80%."}'
     build-node12:
         image: node:12
         steps: 

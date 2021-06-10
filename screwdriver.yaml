@@ -1,11 +1,11 @@
 annotations:
     screwdriver.cd/chainPR: true
-    # screwdriver.cd/restrictPR: all
 jobs: 
     main:
         requires: [~commit, ~pr]
         image: node:12
         steps:
+            - sayitout: echo sayitout
             - echo: echo
             - status: |
                 meta set meta.status.findbugs '{"status":"FAILURE","message":"923 issues found. Previous count: 914 issues.","url":"http://findbugs.com"}'

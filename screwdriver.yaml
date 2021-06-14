@@ -10,8 +10,8 @@ jobs:
             - check: echo pass
             - echo: echo
             - status: |
-                meta set meta.status.coverage '{"status":"PENDING","message":"Coverage is above 80%."}'
-                meta set meta.status.findbugs '{"status":"PENDING","message":"Coverage is below 80%."}'
+                meta set meta.status.coverage '{"status":"PENDING","message":"Coverage is below 80%."}'
+                meta set meta.status.findbugs '{"status":"PENDING","message":"Some code Refactoring is needed"}'
     build-node12:
         image: node:12
         steps: 

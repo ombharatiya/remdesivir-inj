@@ -12,6 +12,7 @@ jobs:
             - status: |
                 meta set meta.status.coverage '{"status":"PENDING","message":"Coverage is below 80%."}'
                 meta set meta.status.findbugs '{"status":"PENDING","message":"Some code Refactoring is needed"}'
+                meta set meta.status.findbugs '{"status":"SUCCESS","message":"No Bugs Found!"}'
     build-node12:
         image: node:12
         steps: 

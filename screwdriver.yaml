@@ -6,11 +6,14 @@ jobs:
         requires: [~commit, ~pr]
         image: node:12
         steps:
+            - sayitout: echo sayitout
             - check: echo pass
             - echo: echo
             - status: |
-                meta set meta.status.findbugs '{"status":"FAILURE","message":"923 issues found. Previous count: 914 issues.","url":"http://findbugs.com"}'
-                meta set meta.status.coverage '{"status":"PENDING","message":"Coverage is above 80%."}'
+                meta set meta.status.coverage '{"status":"PENDING","message":"Coverage is below 80%."}'
+                meta set meta.status.findbugs '{"status":"PENDING","message":"Some code Refactoring is needed"}'
+                meta set meta.status.findbugs '{"status":"SUCCESS","message":"No Bugs Found!"}'
+                meta set meta.status.lint '{"status":"FAILURE","message":"Resolve Lint errors"}'
     build-node12:
         image: node:12
         steps: 

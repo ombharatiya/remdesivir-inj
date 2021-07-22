@@ -5,9 +5,7 @@ jobs:
         requires: [~commit, ~pr]
         image: node:12
         steps:
-            - sayitout: echo sayitout
-            - check: echo pass
-            - echo: echo
+            - hello: echo pass
             - status: |
                 meta set meta.status.coverage '{"status":"PENDING","message":"Coverage is below 80%."}'
                 meta set meta.status.findbugs '{"status":"SUCCESS","message":"No Bugs Found!"}'

@@ -17,7 +17,6 @@ jobs:
         
     # B and C will run in parallel
     build-node10:
-        requires: [~pr]
         image: node:10
         steps:
             - init: npm install

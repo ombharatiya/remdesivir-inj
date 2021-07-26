@@ -4,6 +4,7 @@ jobs:
         image: node:12
         steps:
             - echo: echo
+            - test: echo test
     build-node8:
         image: node:8
         steps: 
